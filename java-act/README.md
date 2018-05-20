@@ -11,7 +11,7 @@ You must have Java SDK 8 and maven 3.5+ installed and environment path setup cor
 
 ## 2. Setup database configuration
 
-Open [src/main/resources/conf/prod/db.properties](blob/master/java-act/src/main/resources/conf/prod/db.properties) to setup database configuration for prod mode
+Open [src/main/resources/conf/prod/db.properties](src/main/resources/conf/prod/db.properties) to setup database configuration for prod mode
 
 
 ## 3. Run the app
@@ -65,4 +65,4 @@ or
 mvn clean compile act:e2e
 ```
 
-The will start the app with `e2e` profile, and it automatically run the end to end tests defined in [src/main/resources/e2e/scenarios.yml](blob/master/java-act/src/main/resources/e2e/scenarios.yml)
+The will start the app with `e2e` profile, and it automatically run the end to end tests defined in [src/main/resources/e2e/scenarios.yml](src/main/resources/e2e/scenarios.yml)
