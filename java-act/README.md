@@ -3,7 +3,7 @@
 This project is to implement the [web-rest-api-benchmark](https://github.com/mihaicracan/web-rest-api-benchmark) using [ActFramework](https://github.com/actframework/actframework).
 
 
-**Note** when doing benchmark, make sure you [run the app in `prod` mode](#32-run-in-prod-mode).
+**Note** when doing the benchmark, please make sure you [run the app in `prod` mode](#32-run-in-prod-mode).
 
 ## 1. Prerequisites
 
