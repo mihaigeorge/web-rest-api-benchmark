@@ -67,6 +67,6 @@ mvn clean compile act:e2e
 
 The will start the app on `e2e` profile, and it automatically run the end to end tests defined in [src/main/resources/e2e/scenarios.yml](src/main/resources/e2e/scenarios.yml)
 
-**Note** when app is running on `e2e` profile, it also uses the same database setting with dev mode, which is defined in [src/main/resources/conf/db.properties](src/main/resources/conf/db.properties), which will not break your prod database defined in [src/main/resources/conf/prod/db.properties](src/main/resources/conf/prod/db.properties).
+**Note** when app is running on `e2e` profile, it also uses the same database setting with dev mode, which is defined in [src/main/resources/conf/db.properties](src/main/resources/conf/db.properties). This makes sure end to end test will not break your prod database defined in [src/main/resources/conf/prod/db.properties](src/main/resources/conf/prod/db.properties).
 
 If you want to supply specific configuration for `e2e` profile, create an `e2e` dir under [src/main/resources/conf/](src/main/resources/conf/) and add a `.properties` file there.
