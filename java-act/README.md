@@ -51,9 +51,9 @@ tar xzf *.tar.gz
 
 When app is running in prod mode, it uses database defined in [src/main/resources/conf/prod/db.properties](src/main/resources/conf/prod/db.properties). The database schema and data must be exists before app start.
 
-## 3.3 Run end to end test
+## 4. Test application
 
-Type
+To run end to end test for the application, type:
 
 ```shell
 ./run_e2e

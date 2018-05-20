@@ -38,9 +38,29 @@ Scenario(User service):
             email:
               - contains: tom
               - contains: abc.com
+            countries:
+              size: 1
+              0:
+                name: France
           1.lastName: Zhang
           1.firstName: Jie
           1.email: jie@xyz.com
           1.countries:
             0.name: China
             1.name: France
+
+Scenario(Country service):
+  fixtures:
+    - test-data.yml
+  descriptions: A service returns list of countries
+  interactions:
+    - description: send request to the service
+      request:
+        method: GET
+        url: /countries
+      response:
+        json:
+          size: 2
+          0:
+            name: China
+          1.name: France
