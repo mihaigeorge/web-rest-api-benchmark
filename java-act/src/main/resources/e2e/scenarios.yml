@@ -1,0 +1,46 @@
+Scenario(Hello Service):
+  description: A service says hello
+  interactions:
+    - description: send request to hello service without parameter
+      request:
+        method: GET
+        url: /hello
+      response:
+        json:
+          hello: world
+
+Scenario(Compute Service):
+  description: A service returns status after computing is done
+  interactions:
+    - description: send request to the service
+      request:
+        method: GET
+        url: /compute
+      response:
+        json:
+          status: done
+
+Scenario(User service):
+  fixtures:
+    - test-data.yml
+  description: A service returns list of French users
+  interactions:
+    - description: send request to the service
+      request:
+        method: GET
+        url: /users
+      response:
+        json:
+          size: 2
+          0:
+            firstName: Tom
+            lastName: Bush
+            email:
+              - contains: tom
+              - contains: abc.com
+          1.lastName: Zhang
+          1.firstName: Jie
+          1.email: jie@xyz.com
+          1.countries:
+            0.name: China
+            1.name: France
