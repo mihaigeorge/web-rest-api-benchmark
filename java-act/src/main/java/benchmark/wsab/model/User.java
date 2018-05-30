@@ -27,7 +27,7 @@ public class User implements SimpleBean {
     @NotNull
     public String email;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.ALL})
+    @ManyToMany(fetch = FetchType.EAGER, cascade = {CascadeType.REMOVE})
     @JoinTable(name = "UserCountryMapping",
             joinColumns = @JoinColumn(name = "userId"),
             inverseJoinColumns = @JoinColumn(name = "countryId"))

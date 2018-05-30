@@ -32,7 +32,7 @@ Scenario(User service):
       response:
         json:
           size: 2
-          0:
+          ?:
             firstName: Tom
             lastName: Bush
             email:
@@ -40,14 +40,16 @@ Scenario(User service):
               - contains: abc.com
             countries:
               size: 1
-              0:
+              ?:
                 name: France
-          1.lastName: Zhang
-          1.firstName: Jie
-          1.email: jie@xyz.com
-          1.countries:
-            0.name: China
-            1.name: France
+          <any>:
+            lastName: Zhang
+            firstName: Jie
+            email: jie@xyz.com
+            countries:
+              size: 2
+              <any>.name: China
+              <any>.name: France
 
 Scenario(Country service):
   fixtures:

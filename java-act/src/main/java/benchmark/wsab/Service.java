@@ -40,15 +40,28 @@ public class Service {
         });
     }
 
+    @GetAction("insert_c")
+    public void insertCountry(JPADao<Integer, Country> dao) {
+        Country c = new Country();
+        c.id = 3;
+        c.name = "Australia";
+        dao.save(c);
+    }
+
     @GetAction("/countries")
     public List<Country> countries(JPADao<Integer, Country> dao) {
         return dao.q().fetch();
     }
 
     @GetAction("/users")
+    public List<User> user(JPADao<Integer, User> dao) {
+        return dao.q("countries.name", "France").fetch();
+    }
+
+    @GetAction("/users_old")
     public List<User> users2(JPADao<Integer, User> dao) {
-        Query q = dao.em().createQuery("select u from User u join u.countries c where c.name = :countryName");
-        q.setParameter("countryName", "France");
+        Query q = dao.em().createQuery("select User from User User join User.countries c where c.name = ?1");
+        q.setParameter(1, "France");
         return q.getResultList();
     }
 
