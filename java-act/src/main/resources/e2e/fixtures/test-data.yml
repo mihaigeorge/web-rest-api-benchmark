@@ -1,0 +1,24 @@
+Country(China):
+  id: 1
+  name: China
+
+Country(France):
+  id: 2
+  name: France
+
+User(Tom):
+  id: 1
+  firstName: Tom
+  lastName: Bush
+  email: tom@abc.com
+  countries:
+    - embed:France
+
+User(Jie):
+  id: 2
+  firstName: Jie
+  lastName: Zhang
+  email: jie@xyz.com
+  countries:
+    - embed:China
+    - embed:France
